@@ -13,11 +13,10 @@ const startApp = async () => {
     app,
   });
 
-  // Routes 
+  // Routes
   app.use('/', healthCheck);
 
   await app.listen(port);
 };
 
 export default startApp;
-

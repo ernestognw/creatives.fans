@@ -34,12 +34,6 @@
     "prettier": "^2.4.1",
     "pretty-quick": "^3.1.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn prettier . && git add . && pretty-quick --staged",
-      "pre-push": "yarn lint ."
-    }
-  },
   "nodemonConfig": {
     "ignore": [
       "dist/*"
