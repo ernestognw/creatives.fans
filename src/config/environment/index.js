@@ -4,6 +4,10 @@ dotenv.config();
 
 const port = process.env.PORT || 3000;
 
+const mongo = {
+  url: process.env.MONGO_URI,
+};
+
 const env = {
   development: process.env.NODE_ENV === 'development',
   test: process.env.NODE_ENV === 'test',
@@ -11,4 +15,4 @@ const env = {
   production: process.env.NODE_ENV === 'production',
 };
 
-export { port, env };
+export { port, mongo, env };
