@@ -1,0 +1,114 @@
+[
+  {
+    "_id": "5f0cca3fd995ca9f66e341c0",
+    "username": "ernestognw",
+    "password": "$2a$10$OuK66xId4YyHzC7ZqCaE/.FnirD1.n0.QtUkFC.KhajZR5LBvAfN.",
+    "firstName": "Ernesto",
+    "lastName": "Garcia",
+    "email": "ernestognw@gmail.com",
+    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "description": "An adventurer",
+    "social": {
+      "facebook": "ernestognw",
+      "instagram": "ernestognw",
+      "twitter": "ernestognw",
+      "website": "ernestognw.com"
+    }
+  },
+  {
+    "_id": "5f0cca3fd995ca9f66e341c1",
+    "username": "atapia",
+    "password": "$2a$10$OuK66xId4YyHzC7ZqCaE/.FnirD1.n0.QtUkFC.KhajZR5LBvAfN.",
+    "firstName": "Alejandro",
+    "lastName": "Tapia",
+    "email": "atapia@gmail.com",
+    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "description": "An adventurer",
+    "social": {
+      "facebook": "atapia",
+      "instagram": "atapia",
+      "twitter": "atapia",
+      "website": "atapia.com"
+    }
+  },
+  {
+    "_id": "5f0cca3fd995ca9f66e341c2",
+    "username": "malipi",
+    "password": "$2a$10$OuK66xId4YyHzC7ZqCaE/.FnirD1.n0.QtUkFC.KhajZR5LBvAfN.",
+    "firstName": "Mariano",
+    "lastName": "Alipi",
+    "email": "malipi@gmail.com",
+    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "description": "An adventurer",
+    "social": {
+      "facebook": "malipi",
+      "instagram": "malipi",
+      "twitter": "malipi",
+      "website": "malipi.com"
+    }
+  },
+  {
+    "_id": "5f0cca3fd995ca9f66e341c3",
+    "username": "alejandrordz",
+    "password": "$2a$10$OuK66xId4YyHzC7ZqCaE/.FnirD1.n0.QtUkFC.KhajZR5LBvAfN.",
+    "firstName": "Alejandro",
+    "lastName": "Rodríguez",
+    "email": "alejandrordz@gmail.com",
+    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "description": "An adventurer",
+    "social": {
+      "facebook": "alejandrordz",
+      "instagram": "alejandrordz",
+      "twitter": "alejandrordz",
+      "website": "alejandrordz.com"
+    }
+  },
+  {
+    "_id": "5f0cca3fd995ca9f66e341c4",
+    "username": "rrico",
+    "password": "$2a$10$OuK66xId4YyHzC7ZqCaE/.FnirD1.n0.QtUkFC.KhajZR5LBvAfN.",
+    "firstName": "Rafael",
+    "lastName": "Rico",
+    "email": "rrico@gmail.com",
+    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "description": "An adventurer",
+    "social": {
+      "facebook": "rrico",
+      "instagram": "rrico",
+      "twitter": "rrico",
+      "website": "rrico.com"
+    }
+  },
+  {
+    "_id": "5f0cca3fd995ca9f66e341c5",
+    "username": "markmc",
+    "password": "$2a$10$OuK66xId4YyHzC7ZqCaE/.FnirD1.n0.QtUkFC.KhajZR5LBvAfN.",
+    "firstName": "Marco",
+    "lastName": "Muñoz",
+    "email": "markmc@gmail.com",
+    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "description": "An adventurer",
+    "social": {
+      "facebook": "markmc",
+      "instagram": "markmc",
+      "twitter": "markmc",
+      "website": "markmc.com"
+    }
+  },
+  {
+    "_id": "5f0cca3fd995ca9f66e341c6",
+    "username": "alezepeda",
+    "password": "$2a$10$OuK66xId4YyHzC7ZqCaE/.FnirD1.n0.QtUkFC.KhajZR5LBvAfN.",
+    "firstName": "Alejandro",
+    "lastName": "Zepeda",
+    "email": "alezepeda@gmail.com",
+    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "description": "An adventurer",
+    "social": {
+      "facebook": "alezepeda",
+      "instagram": "alezepeda",
+      "twitter": "alezepeda",
+      "website": "alezepeda.com"
+    }
+  }
+]

@@ -1,15 +1,19 @@
 import { port } from '@config/environment';
 import { connectDB } from '@db/scripts';
+import { db, api } from '@config/loggers';
 import startApp from './app';
 
 const start = async () => {
   try {
+    db.await('Connecting to database');
     await connectDB();
-    console.info('🔥  Connected to DB');
+    db.success('🔥  Connected to DB');
+
     await startApp();
-    console.info(`🚀  GraphQL server running at port: ${port}`);
-  } catch (err) {
-    console.info('Not able to run GraphQL server', err);
+    api.success(`🚀  GraphQL server running at port: ${port}`);
+  } catch {
+    db.error('Failed to connect to DB');
+    api.error('Not able to run GraphQL server');
   }
 };
 
