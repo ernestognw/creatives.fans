@@ -8,6 +8,11 @@ const mongo = {
   url: process.env.MONGO_URI,
 };
 
+const secrets = {
+  access: process.env.ACCESS_SECRET,
+  refresh: process.env.REFRESH_SECRET,
+};
+
 const env = {
   development: process.env.NODE_ENV === 'development',
   test: process.env.NODE_ENV === 'test',
@@ -22,4 +27,4 @@ const AWSConfig = {
   s3Bucket: process.env.AWS_S3_BUCKET,
 };
 
-export { port, mongo, env, AWSConfig };
+export { port, mongo, env, AWSConfig, secrets };
