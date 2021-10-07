@@ -25,6 +25,7 @@ const UserSchema = new Schema(
     profileImg: { type: String },
     description: { type: String },
     social: { type: SocialMediaSchema, default: {} },
+    passwordRecoveryToken: { type: String },
   },
   {
     timestamps: true,

@@ -15,4 +15,11 @@ const env = {
   production: process.env.NODE_ENV === 'production',
 };
 
-export { port, mongo, env };
+const AWSConfig = {
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_REGION,
+  s3Bucket: process.env.AWS_S3_BUCKET,
+};
+
+export { port, mongo, env, AWSConfig };
