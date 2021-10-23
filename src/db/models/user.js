@@ -10,7 +10,6 @@ const SocialMediaSchema = new Schema({
 
 const UserSchema = new Schema(
   {
-    password: { type: String, required: true },
     username: {
       type: String,
       required: true,
@@ -25,7 +24,6 @@ const UserSchema = new Schema(
     profileImg: { type: String },
     description: { type: String },
     social: { type: SocialMediaSchema, default: {} },
-    passwordRecoveryToken: { type: String },
   },
   {
     timestamps: true,

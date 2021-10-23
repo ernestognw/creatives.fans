@@ -1,6 +1,6 @@
 import { sign, verify } from 'jsonwebtoken';
 import { Types } from 'mongoose';
-import { User, Session } from '@db/models';
+import { Session } from '@db/models';
 import { env, secrets } from '@config/environment';
 import { cookie } from '@config/constants';
 import { parse } from 'express-useragent';
@@ -11,24 +11,6 @@ const commonCookieParams = {
 };
 
 const tokens = {
-  passwordRecovery: {
-    get: (user) => {
-      const passwordRecoveryToken = sign({ userId: user.id }, secrets.access, {
-        expiresIn: 21600, // 3 hours
-      });
-
-      return passwordRecoveryToken;
-    },
-    validate: async (token) => {
-      const { userId } = verify(token, secrets.access);
-
-      const user = await User.findOne({ _id: userId });
-
-      if (user.passwordRecoveryToken !== token) throw new Error('Invalid password recovery token');
-
-      return user;
-    },
-  },
   access: {
     get: (user) => {
       const accessExpiresIn = 60 * 15; // 15 minutes
