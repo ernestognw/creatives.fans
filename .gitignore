@@ -119,3 +119,5 @@ dist
 
 # Mongo
 data
+
+.DS_Store
