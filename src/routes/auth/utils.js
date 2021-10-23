@@ -1,6 +1,7 @@
 import { sign, verify } from 'jsonwebtoken';
 import { Types } from 'mongoose';
-import { Session } from '@db/models';
+import { uniqueNamesGenerator, colors } from 'unique-names-generator';
+import { User, Session } from '@db/models';
 import { env, secrets } from '@config/environment';
 import { cookie } from '@config/constants';
 import { parse } from 'express-useragent';
@@ -8,6 +9,43 @@ import { parse } from 'express-useragent';
 const commonCookieParams = {
   secure: env.production || env.staging,
   domain: env.production || env.staging ? cookie.domain : undefined,
+};
+
+const users = {
+  buildOAuthUser: async ({ firstName = '', lastName = '', email = '', profileImg = '' }) => {
+    const emailCopy = email;
+    let username = emailCopy.split('@')[0];
+
+    let isUsernameAvailable = false;
+
+    while (!isUsernameAvailable) {
+      /**
+       * @note Even though an await inside a loop is kind of bad,
+       * it is unlikely to loop a considerable amount of times
+       */
+
+      // eslint-disable-next-line no-await-in-loop
+      const isUsernameTaken = (await User.countDocuments({ username: username.toLowerCase() })) > 0;
+
+      if (isUsernameTaken) {
+        const color = uniqueNamesGenerator({
+          dictionaries: [colors],
+          length: 1,
+        });
+        username = `${username}_${color}`;
+      } else isUsernameAvailable = true;
+    }
+
+    const user = new User({
+      username: username.toLowerCase(),
+      firstName,
+      lastName,
+      emails: email.toLowerCase(),
+      profileImg,
+    });
+
+    return user.save();
+  },
 };
 
 const tokens = {
@@ -112,4 +150,4 @@ const tokens = {
   },
 };
 
-export { tokens };
+export { tokens, users };

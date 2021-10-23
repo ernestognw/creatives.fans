@@ -1,8 +1,9 @@
 import { Router } from 'express';
 import { User, Session } from '@db/models';
-import { compareSync } from 'bcryptjs';
 import { cookie } from '@config/constants';
-import { tokens } from './utils';
+import { getFacebookUser } from '@connections/facebook';
+import { getGoogleUser } from '@connections/google';
+import { tokens, users } from './utils';
 
 const auth = Router();
 
@@ -28,19 +29,24 @@ auth.get('/access', async (req, res) => {
   }
 });
 
-auth.post('/login', async (req, res) => {
-  const { emailUsername, password, expires = true } = req.body;
-
+auth.post('login/google', async (req, res) => {
   try {
-    const user = await User.findOne({
-      $or: [{ email: emailUsername }, { username: emailUsername }],
+    const { googleIdToken, expires = true } = req.body;
+
+    const payload = await getGoogleUser(googleIdToken);
+
+    let user = await User.findOne({
+      email: payload.email.toLowerCase(),
     });
 
-    if (!user || !compareSync(password, user.password))
-      return res.status(401).json({
-        message: 'Login failed',
-        error: "Email and password don't match",
+    if (!user) {
+      user = await users.buildOAuthUser({
+        email: payload.email,
+        profileImg: payload.picture,
+        firstName: payload.given_name,
+        lastName: payload.family_name,
       });
+    }
 
     const { refreshToken, accessToken, session } = await tokens.refresh.set(req, res, {
       user,
@@ -53,7 +59,41 @@ auth.post('/login', async (req, res) => {
       session,
     });
   } catch (err) {
-    return res.status(500).json(err);
+    throw res.status(500).json(err);
+  }
+});
+
+auth.post('login/facebook', async (req, res) => {
+  try {
+    const { fbAccessToken, expires = true } = req.body;
+
+    const fbUser = await getFacebookUser(fbAccessToken);
+
+    let user = await User.findOne({
+      'emails.email': fbUser.email.toLowerCase(),
+    });
+
+    if (!user) {
+      user = await users.buildOAuthUser({
+        email: fbUser.email,
+        profileImg: fbUser.picture.data.url,
+        firstName: fbUser.first_name,
+        lastName: fbUser.last_name,
+      });
+    }
+
+    const { refreshToken, accessToken, session } = await tokens.refresh.set(req, res, {
+      user,
+      expires,
+    });
+
+    return res.status(200).json({
+      refreshToken,
+      accessToken,
+      session,
+    });
+  } catch (err) {
+    throw res.status(500).json(err);
   }
 });
 

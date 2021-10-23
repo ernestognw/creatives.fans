@@ -27,4 +27,8 @@ const AWSConfig = {
   s3Bucket: process.env.AWS_S3_BUCKET,
 };
 
-export { port, mongo, env, AWSConfig, secrets };
+const google = {
+  clientId: process.env.GOOGLE_CLIENT_ID,
+};
+
+export { port, mongo, env, AWSConfig, secrets, google };
