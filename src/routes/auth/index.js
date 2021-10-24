@@ -70,7 +70,7 @@ auth.post('/login/facebook', async (req, res) => {
     const fbUser = await getFacebookUser(fbAccessToken);
 
     let user = await User.findOne({
-      'emails.email': fbUser.email.toLowerCase(),
+      email: fbUser.email.toLowerCase(),
     });
 
     if (!user) {
