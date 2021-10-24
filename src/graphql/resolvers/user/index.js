@@ -1,5 +1,3 @@
-import userQueries from './queries';
-import userMutations from './mutations';
-import userFields from './fields';
-
-export { userQueries, userMutations, userFields };
+export { default as userQueries } from './queries';
+export { default as userMutations } from './mutations';
+export { default as userFields } from './fields';

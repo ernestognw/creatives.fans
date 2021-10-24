@@ -3,7 +3,7 @@ import { defaultParams } from '@config/constants';
 import { buildQuery, buildSearch } from '@graphql/resolvers/utils';
 
 const userQueries = {
-  users: async (_, { id, search = {}, params = defaultParams, sortBy }) => {
+  users: async (_, { id, params = defaultParams, search = {}, sortBy }) => {
     const query = {
       deleted: false,
       ...buildQuery(id, '_id'),

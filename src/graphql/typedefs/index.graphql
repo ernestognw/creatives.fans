@@ -3,20 +3,36 @@ scalar Date
 
 # Directives
 directive @paginate on FIELD_DEFINITION
+directive @auth on FIELD_DEFINITION
 
 type Query {
   # User
   users(
     id: QueryOperators
-    search: UserSearchInput
     params: QueryParams
+    search: UserSearchInput
     sortBy: UserSortInput
   ): Users! @paginate
   user(id: ID, username: String): User
   userByToken: User!
+
+  # Support
+  supports(
+    id: QueryOperators
+    params: QueryParams
+    search: SupportSearchInput
+    fan: QueryOperators
+    creative: QueryOperators
+    sortBy: SupportSortInput
+  ): Supports! @paginate
+  support(id: ID!): Support
 }
 
 type Mutation {
   # User
-  updateUserByToken(user: UserUpdateInput!): User!
+  updateUserByToken(user: UserUpdateInput!): User! @auth
+
+  # Support
+  createSupport(support: SupportCreateInput!): Support! @auth
+  updateSupport(support: SupportUpdateInput!): Support! @auth
 }

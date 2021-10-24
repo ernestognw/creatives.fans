@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import { paginate } from '@graphql/directives';
+import { paginate, auth } from '@graphql/directives';
 import resolvers from '@graphql/resolvers';
 
 const gqlFiles = readdirSync(join(__dirname, './typedefs'));
@@ -19,6 +19,7 @@ const schema = makeExecutableSchema({
   resolvers,
   schemaDirectives: {
     paginate,
+    auth,
   },
 });
 

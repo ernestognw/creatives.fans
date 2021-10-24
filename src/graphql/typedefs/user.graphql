@@ -8,6 +8,20 @@ type User implements TimeStamps {
   profileImg: String
   description: String
   social: UserSocial!
+  supportsGiven(
+    id: QueryOperators
+    params: QueryParams
+    search: SupportSearchInput
+    creative: QueryOperators
+    sortBy: SupportSortInput
+  ): Supports! @paginate
+  supportsReceived(
+    id: QueryOperators
+    params: QueryParams
+    search: SupportSearchInput
+    fan: QueryOperators
+    sortBy: SupportSortInput
+  ): Supports! @paginate
 
   # Interface required
   createdAt: Date!

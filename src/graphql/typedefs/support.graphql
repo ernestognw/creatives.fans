@@ -1,0 +1,44 @@
+# Types
+type Support implements TimeStamps {
+  id: ID!
+  description: String
+  amount: Float!
+  fan: User!
+  creative: User!
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Supports {
+  info: Info!
+  results: [Support]!
+}
+
+# Inputs
+input SupportCreateInput {
+  description: String
+  amount: Float!
+  creative: ID!
+}
+
+input SupportUpdateInput {
+  description: String
+}
+
+input SupportSearchInput {
+  description: String
+}
+
+input SupportSortInput {
+  field: SupportSortableField!
+  order: Order!
+}
+
+# Enums
+enum SupportSortableField {
+  createdAt
+  updatedAt
+  amount
+}
