@@ -13,6 +13,7 @@
     "prettier": "prettier --write \"**/*.{js,graphql,json}\""
   },
   "dependencies": {
+    "@apollo/client": "^3.4.16",
     "@babel/cli": "^7.15.7",
     "@graphql-tools/schema": "7.1.5",
     "@graphql-tools/utils": "7.10.0",
@@ -20,6 +21,8 @@
     "aws-sdk": "^2.1002.0",
     "axios": "^0.23.0",
     "babel-plugin-module-resolver": "^4.1.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-useragent": "^1.0.15",

@@ -29,7 +29,7 @@ auth.get('/access', async (req, res) => {
   }
 });
 
-auth.post('login/google', async (req, res) => {
+auth.post('/login/google', async (req, res) => {
   try {
     const { googleIdToken, expires = true } = req.body;
 
@@ -59,11 +59,11 @@ auth.post('login/google', async (req, res) => {
       session,
     });
   } catch (err) {
-    throw res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
-auth.post('login/facebook', async (req, res) => {
+auth.post('/login/facebook', async (req, res) => {
   try {
     const { fbAccessToken, expires = true } = req.body;
 

@@ -1,11 +1,11 @@
 import { ApolloServer } from 'apollo-server-express';
 import schema from './schema';
-// import context from './context';
+import context from './context';
 
 const apolloServer = new ApolloServer({
   schema,
   introspection: true,
-  // context,
+  context,
 });
 
 export default apolloServer;

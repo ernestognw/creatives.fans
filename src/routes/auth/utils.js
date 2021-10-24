@@ -40,7 +40,7 @@ const users = {
       username: username.toLowerCase(),
       firstName,
       lastName,
-      emails: email.toLowerCase(),
+      email: email.toLowerCase(),
       profileImg,
     });
 
