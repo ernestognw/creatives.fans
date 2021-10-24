@@ -1,7 +1,13 @@
+import { userQueries, userMutations, userFields } from './user';
+
 const resolvers = {
   Query: {
-    test: () => true,
+    ...userQueries,
   },
+  Mutation: {
+    ...userMutations,
+  },
+  ...userFields,
 };
 
 export default resolvers;

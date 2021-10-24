@@ -1,3 +1,22 @@
+# Custom Scalars
+scalar Date
+
+# Directives
+directive @paginate on FIELD_DEFINITION
+
 type Query {
-  test: Boolean!
+  # User
+  users(
+    id: QueryOperators
+    search: UserSearchInput
+    params: QueryParams
+    sortBy: UserSortInput
+  ): Users! @paginate
+  user(id: ID, username: String): User
+  userByToken: User!
+}
+
+type Mutation {
+  # User
+  updateUserByToken(user: UserUpdateInput!): User!
 }

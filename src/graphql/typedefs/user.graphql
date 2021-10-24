@@ -1,0 +1,66 @@
+# Types
+type User implements TimeStamps {
+  id: ID!
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  profileImg: String
+  description: String
+  social: UserSocial!
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type UserSocial {
+  facebook: String
+  instagram: String
+  twitter: String
+  website: String
+}
+
+type Users {
+  info: Info!
+  results: [User]!
+}
+
+# Inputs
+input UserUpdateInput {
+  username: String
+  firstName: String
+  lastName: String
+  email: String
+  profileImg: String
+  description: String
+  social: UserSocialInput
+}
+
+input UserSocialInput {
+  facebook: String
+  instagram: String
+  twitter: String
+  website: String
+}
+
+input UserSearchInput {
+  username: String
+  firstName: String
+  lastName: String
+  email: String
+}
+
+input UserSortInput {
+  field: UserSortableField!
+  order: Order!
+}
+
+# Enums
+enum UserSortableField {
+  createdAt
+  username
+  firstName
+  lastName
+  email
+}
