@@ -6,7 +6,7 @@
     "firstName": "Ernesto",
     "lastName": "Garcia",
     "email": "ernesto@gmail.com",
-    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "profileImg": "",
     "description": "An adventurer",
     "social": {
       "facebook": "ernestognw",
@@ -22,7 +22,7 @@
     "firstName": "Alejandro",
     "lastName": "Tapia",
     "email": "atapia@gmail.com",
-    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "profileImg": "",
     "description": "An adventurer",
     "social": {
       "facebook": "atapia",
@@ -38,7 +38,7 @@
     "firstName": "Mariano",
     "lastName": "Alipi",
     "email": "malipi@gmail.com",
-    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "profileImg": "",
     "description": "An adventurer",
     "social": {
       "facebook": "malipi",
@@ -54,7 +54,7 @@
     "firstName": "Alejandro",
     "lastName": "Rodríguez",
     "email": "alejandrordz@gmail.com",
-    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "profileImg": "",
     "description": "An adventurer",
     "social": {
       "facebook": "alejandrordz",
@@ -70,7 +70,7 @@
     "firstName": "Rafael",
     "lastName": "Rico",
     "email": "rrico@gmail.com",
-    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "profileImg": "",
     "description": "An adventurer",
     "social": {
       "facebook": "rrico",
@@ -86,7 +86,7 @@
     "firstName": "Marco",
     "lastName": "Muñoz",
     "email": "markmc@gmail.com",
-    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "profileImg": "",
     "description": "An adventurer",
     "social": {
       "facebook": "markmc",
@@ -102,7 +102,7 @@
     "firstName": "Alejandro",
     "lastName": "Zepeda",
     "email": "alezepeda@gmail.com",
-    "profileImg": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    "profileImg": "",
     "description": "An adventurer",
     "social": {
       "facebook": "alezepeda",
