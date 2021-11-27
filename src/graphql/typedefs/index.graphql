@@ -16,7 +16,7 @@ type Query {
     sortBy: UserSortInput
   ): Users! @paginate
   user(id: ID, username: String): User
-  userByToken: User!
+  userByToken: User! @auth
   usernameExists(username: String!): Boolean!
 
   # Support
@@ -32,6 +32,9 @@ type Query {
 
   # AWS
   signFileUrl(filePath: String!, fileType: String!): SignedFileUrl!
+
+  # Stripe
+  setupIntentByToken: SetupIntent! @auth
 }
 
 type Mutation {

@@ -32,6 +32,7 @@
     "mongoose": "^6.0.9",
     "mongoose-delete": "^0.5.4",
     "signale": "^1.4.0",
+    "stripe": "^8.191.0",
     "unique-names-generator": "^4.6.0"
   },
   "devDependencies": {

@@ -31,4 +31,8 @@ const google = {
   clientId: process.env.GOOGLE_CLIENT_ID,
 };
 
-export { port, mongo, env, AWSConfig, secrets, google };
+const stripe = {
+  privateKey: process.env.STRIPE_PRIVATE_KEY,
+};
+
+export { port, mongo, env, AWSConfig, secrets, google, stripe };

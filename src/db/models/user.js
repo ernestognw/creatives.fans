@@ -24,6 +24,7 @@ const UserSchema = new Schema(
     profileImg: { type: String },
     description: { type: String },
     social: { type: SocialMediaSchema, default: {} },
+    stripeCustomerId: { type: String },
   },
   {
     timestamps: true,
