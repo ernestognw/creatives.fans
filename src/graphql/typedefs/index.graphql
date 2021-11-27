@@ -11,6 +11,8 @@ type Query {
     id: QueryOperators
     params: QueryParams
     search: UserSearchInput
+    supports: QueryOperators
+    supportedBy: QueryOperators
     sortBy: UserSortInput
   ): Users! @paginate
   user(id: ID, username: String): User
