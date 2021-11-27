@@ -17,6 +17,7 @@ type Query {
   ): Users! @paginate
   user(id: ID, username: String): User
   userByToken: User!
+  usernameExists(username: String!): Boolean!
 
   # Support
   supports(

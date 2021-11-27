@@ -90,7 +90,6 @@ const userQueries = {
       params,
     };
   },
-  userByToken: async (_, __, { user: { id } }) => User.findOne({ _id: id }),
   user: async (_, { id, username }) => {
     const query = {};
 
@@ -102,6 +101,8 @@ const userQueries = {
 
     return User.findOne(query);
   },
+  userByToken: async (_, __, { user: { id } }) => User.findOne({ _id: id }),
+  usernameExists: async (_, { username }) => (await User.countDocuments({ username })) > 0,
 };
 
 export default userQueries;
