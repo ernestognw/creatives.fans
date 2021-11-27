@@ -6,7 +6,10 @@ const stripeQueries = {
     const user = await User.findOne({ _id: id });
 
     if (!user.stripeCustomerId) {
-      const { id: stripeCustomerId } = await stripe.customers.create();
+      const { id: stripeCustomerId } = await stripe.customers.create({
+        email: user.email,
+        name: `${user.firstName} ${user.lastName}`,
+      });
       user.stripeCustomerId = stripeCustomerId;
       await user.save();
     }
