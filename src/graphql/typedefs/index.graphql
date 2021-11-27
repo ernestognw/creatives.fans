@@ -29,6 +29,9 @@ type Query {
     sortBy: SupportSortInput
   ): Supports! @paginate
   support(id: ID!): Support
+
+  # AWS
+  signFileUrl(filePath: String!, fileType: String!): SignedFileUrl!
 }
 
 type Mutation {
