@@ -34,7 +34,7 @@ type Query {
   signFileUrl(filePath: String!, fileType: String!): SignedFileUrl!
 
   # Stripe
-  setupIntentByToken: SetupIntent! @auth
+  stripeSetupIntentByToken: StripeSetupIntent! @auth
 }
 
 type Mutation {

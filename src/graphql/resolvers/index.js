@@ -1,7 +1,7 @@
 import { userQueries, userMutations, userFields } from './user';
 import { supportQueries, supportMutations, supportFields } from './support';
 import { AWSQueries } from './aws';
-import { stripeQueries } from './stripe';
+import { stripeQueries, stripeFields } from './stripe';
 
 const resolvers = {
   Query: {
@@ -16,6 +16,7 @@ const resolvers = {
   },
   ...userFields,
   ...supportFields,
+  ...stripeFields,
 };
 
 export default resolvers;

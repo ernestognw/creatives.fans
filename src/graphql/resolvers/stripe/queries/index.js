@@ -2,7 +2,7 @@ import { User } from '@db/models';
 import stripe from '@connections/stripe';
 
 const stripeQueries = {
-  setupIntentByToken: async (_, __, { user: { id } }) => {
+  stripeSetupIntentByToken: async (_, __, { user: { id } }) => {
     const user = await User.findOne({ _id: id });
 
     if (!user.stripeCustomerId) {
@@ -14,13 +14,13 @@ const stripeQueries = {
       await user.save();
     }
 
-    const setupIntent = await stripe.setupIntents.create({
+    const StripeSetupIntent = await stripe.StripeSetupIntents.create({
       customer: user.stripeCustomerId,
       payment_method_types: ['card'],
     });
 
     return {
-      clientSecret: setupIntent.client_secret,
+      clientSecret: StripeSetupIntent.client_secret,
     };
   },
 };

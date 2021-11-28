@@ -1,5 +1,6 @@
 import { Support } from '@db/models';
 import { defaultParams } from '@config/constants';
+import stripe from '@connections/stripe';
 import { buildQuery, buildSearch } from '@graphql/resolvers/utils';
 
 const userFields = {
@@ -64,6 +65,8 @@ const userFields = {
         params,
       };
     },
+    stripeCustomer: ({ stripeCustomerId }) =>
+      stripeCustomerId ? stripe.customers.retrieve(stripeCustomerId) : null,
   },
 };
 

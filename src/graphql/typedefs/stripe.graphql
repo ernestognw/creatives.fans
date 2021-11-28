@@ -1,3 +1,42 @@
-type SetupIntent {
+# Types
+type StripeSetupIntent {
   clientSecret: String!
+}
+
+type StripeCustomer {
+  id: ID!
+  paymentMethods: [StripePaymentMethods]
+}
+
+type StripePaymentMethods {
+  id: ID!
+  card: StripeCard!
+}
+
+type StripeCard {
+  id: ID!
+  expirationMonth: Int!
+  expirationYear: Int!
+  brand: StripePaymentMethodCardBrand!
+  last4: String!
+  funding: StripePaymentMethodCardFunding!
+}
+
+# Enums
+enum StripePaymentMethodCardBrand {
+  amex
+  diners
+  discover
+  jcb
+  mastercard
+  unionpay
+  visa
+  unknown
+}
+
+enum StripePaymentMethodCardFunding {
+  credit
+  debit
+  pepaid
+  unknown
 }

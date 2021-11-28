@@ -22,6 +22,7 @@ type User implements TimeStamps {
     fan: QueryOperators
     sortBy: SupportSortInput
   ): Supports! @paginate
+  stripeCustomer: StripeCustomer
 
   # Interface required
   createdAt: Date!

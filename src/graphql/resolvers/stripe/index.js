@@ -1,3 +1,4 @@
 import stripeQueries from './queries';
+import stripeFields from './fields';
 
-export { stripeQueries };
+export { stripeQueries, stripeFields };
