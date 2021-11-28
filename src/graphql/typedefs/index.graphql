@@ -44,4 +44,7 @@ type Mutation {
   # Support
   createSupport(support: SupportCreateInput!): Support! @auth
   updateSupport(support: SupportUpdateInput!): Support! @auth
+
+  # Stripe
+  stripeDetachPaymentMethod(id: ID!): Boolean! @auth
 }
