@@ -19,7 +19,7 @@ type Supports {
 # Inputs
 input SupportCreateInput {
   description: String
-  amount: Float!
+  amount: Float
   creative: ID!
 }
 
